@@ -25,13 +25,14 @@ public class ListController {
         columnChoices.put("all", "All");
         columnChoices.put("employer", "Employer");
         columnChoices.put("location", "Location");
-        columnChoices.put("positionType", "Position Type");
-        columnChoices.put("coreCompetency", "Skill");
+        columnChoices.put("positiontype", "Position Type");
+        columnChoices.put("skill", "Skill");
 
+        //tableChoices.put("all", JobData.findAll());
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
-        tableChoices.put("positionType", JobData.getAllPositionTypes());
-        tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+        tableChoices.put("positiontype", JobData.getAllPositionTypes());
+        tableChoices.put("skill", JobData.getAllCoreCompetency());
     }
 
     @RequestMapping(value = "")

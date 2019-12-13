@@ -26,6 +26,23 @@
             </div>
         </div>
     </div>
+    <div th:fragment="list-jobs">
+        <table class="job-listing">
+            <tr th:each="job : ${jobs}">
+                <td>
+                    <th:block th:each="line : ${job.toString().split('\n')}">
+                        <th:block th:if="${line.split(':')[0] == 'Employer' or line.split(':')[0] == 'Skill' or line.split(':')[0] == 'Position Type' or line.split(':')[0] == 'Location'}">
+                                <p>
+                                    <th:block th:text="${line.split(':')[0] + ':'}"></th:block>
+                                    <a th:href="@{/list/jobs(column=${line.split(':')[0].toLowerCase().replaceAll('\s','')},value=${line.split(':')[1].trim()})}" th:text="${line.split(':')[1]}"></a>
+                                </p>
+                        </th:block>
+                        <p th:unless="${line.split(':')[0] == 'Employer' or line.split(':')[0] == 'Skill' or line.split(':')[0] == 'Position Type' or line.split(':')[0] == 'Location'}" th:text="${line}"></p>
+                    </th:block>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>

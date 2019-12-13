@@ -84,7 +84,7 @@ public class JobData {
             theValue = job.getEmployer().toString();
         } else if (fieldName.equals("location")){
             theValue = job.getLocation().toString();
-        } else if (fieldName.equals("positionType")){
+        } else if (fieldName.equals("positiontype")){
             theValue = job.getPositionType().toString();
         } else {
             theValue = job.getCoreCompetency().toString();
